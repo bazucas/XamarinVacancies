@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinVacancies.Pages.MyVacancies">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Vacancies" FontSize="24"/>
+                <Label Text="find your job here" FontSize="12"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Add Vacancy" Clicked="AddVacancy"/>
+                <Button Text="My Vacancies" Clicked="MyVacancies"/>
+            </StackLayout>
+            <Entry Placeholder="Search"/>
+            <Label Text="15 vacancies found"/>
+            <ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="100"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Text="{Binding VacancyName}" FontAttributes="Bold"/>
+                            <Label Grid.Column="0" Text="{Binding Company}"/>
+                            <Label Grid.Column="0" Text="{Binding City}"/>
+
+                            <Label Text="Edit" Grid.Column="1">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="EditVacancy" CommandParameter="{Binding .}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                            <Label Text="|"/>
+                            <Label Text="Remove" Grid.Column="1">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="RemoveVacancy" CommandParameter="{Binding .}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

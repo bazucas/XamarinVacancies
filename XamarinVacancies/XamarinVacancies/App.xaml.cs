@@ -1,6 +1,5 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Xamarin.Forms;
+using XamarinVacancies.Pages;
 
 namespace XamarinVacancies
 {
@@ -10,7 +9,7 @@ namespace XamarinVacancies
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new SearchVacancies());
         }
 
         protected override void OnStart()

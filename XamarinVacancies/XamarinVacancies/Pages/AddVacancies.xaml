@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinVacancies.Pages.AddVacancies">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="VacancyName" Placeholder="Vacancy"/>
+            <Entry x:Name="Company" Placeholder="Company"/>
+            <Entry x:Name="Quantity" Placeholder="Quantity"/>
+            <Entry x:Name="City" Placeholder="City"/>
+            <Entry x:Name="Salary" Placeholder="Salary"/>
+            <Label Text="Description"/>
+            <Editor x:Name="Description" Height="200"/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Contract Type"/>
+                <Label Text="Contractor"/>
+                <Switch x:Name="ContractType"/>
+                <Label Text="Full Time"/>
+            </StackLayout>
+            <Entry x:Name="Telephone" Placeholder="Telephone"/>
+            <Entry x:Name="Email" Placeholder="Email"/>
+            <Button Text="Save" Clicked="SaveAction"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
