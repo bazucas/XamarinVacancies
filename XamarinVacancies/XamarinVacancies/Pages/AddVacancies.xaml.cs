@@ -24,15 +24,14 @@ namespace XamarinVacancies.Pages
                 Company = Company.Text,
                 City = City.Text,
                 Description = Description.Text,
-                ContractType = ContractType.IsToggled ? "Full Time" : "Contractor",
+                ContractType = ContractType.IsToggled ? "FT" : "Ctrt",
                 Telephone = Telephone.Text,
                 Email = Email.Text
             };
 
             var db = new DbAccess();
             db.AddVacancy(vac);
-
-            Navigation.PopAsync();
+            Application.Current.MainPage = new NavigationPage(new SearchVacancies());
         }
     }
 }

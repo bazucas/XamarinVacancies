@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XamarinVacancies.Database;
 using XamarinVacancies.Models;
 
 namespace XamarinVacancies.Pages
@@ -16,7 +14,14 @@ namespace XamarinVacancies.Pages
         public SearchVacancies()
         {
             InitializeComponent();
+
+            var dbCon = new DbAccess();
+            List = dbCon.GetVacancies();
+            VacancyList.ItemsSource = List;
+            LblCount.Text = List.Count.ToString();
         }
+
+        private IList<Vacancy> List { get; }
 
         private void AddVacancy(object sender, EventArgs e)
         {
@@ -31,8 +36,13 @@ namespace XamarinVacancies.Pages
         private void VacancyDetails(object sender, EventArgs e)
         {
             var lblDetail = (Label) sender;
-            var vacancy = (Vacancy)((TapGestureRecognizer)lblDetail.GestureRecognizers[0]).CommandParameter;
+            var vacancy = (Vacancy) ((TapGestureRecognizer) lblDetail.GestureRecognizers[0]).CommandParameter;
             Navigation.PushAsync(new VacancyDetails(vacancy));
+        }
+
+        private void SearchVacancy(object sender, TextChangedEventArgs e)
+        {
+            VacancyList.ItemsSource = List.Where(v => v.VacancyName.Contains(e.NewTextValue)).ToList();
         }
     }
 }

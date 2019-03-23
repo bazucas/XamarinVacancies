@@ -1,18 +1,40 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XamarinVacancies.Pages.VacancyDetails">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding VacancyName}" />
-            <Label Text="{Binding Company}" />
-            <Label Text="{Binding Quantity}" />
-            <Label Text="{Binding City}" />
-            <Label Text="{Binding Salary}" />
-            <Label Text="{Binding Description}" />
-            <Label Text="{Binding ContractType}" />
-            <Label Text="{Binding Telephone}" />
-            <Label Text="{Binding Email}" />
+            <Label Text="{Binding VacancyName}" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
+            <Label Text="{Binding Company}" FontSize="10" HorizontalOptions="Center" TextColor="#EEE" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Vacancies:" FontAttributes="Bold" />
+                <Label Text="{Binding Quantity}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="City:" FontAttributes="Bold" />
+                <Label Text="{Binding City}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Salary in $usd:" FontAttributes="Bold" />
+                <Label Text="{Binding Salary}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Description:" FontAttributes="Bold" />
+                <Label Text="{Binding Description}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Contract Type:" FontAttributes="Bold" />
+                <Label Text="{Binding ContractType}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Telephone:" FontAttributes="Bold" />
+                <Label Text="{Binding Telephone}" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Email:" FontAttributes="Bold" />
+                <Label Text="{Binding Email}" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

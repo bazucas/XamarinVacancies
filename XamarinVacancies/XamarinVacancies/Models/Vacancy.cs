@@ -5,8 +5,8 @@ namespace XamarinVacancies.Models
     [Table("Vacancy")]
     public class Vacancy
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        [PrimaryKey] [AutoIncrement] public int Id { get; set; }
+
         public string VacancyName { get; set; }
         public int Quantity { get; set; }
         public string City { get; set; }

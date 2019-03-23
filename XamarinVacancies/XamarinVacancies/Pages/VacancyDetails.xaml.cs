@@ -11,7 +11,7 @@ namespace XamarinVacancies.Pages
         {
             InitializeComponent();
 
-            DisplayAlert("Message", vacancy.VacancyName, "Ok");
+            BindingContext = vacancy;
         }
     }
 }

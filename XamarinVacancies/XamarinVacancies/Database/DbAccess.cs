@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using SQLite;
-using XamarinVacancies.Models;
 using Xamarin.Forms;
+using XamarinVacancies.Models;
 
 namespace XamarinVacancies.Database
 {
@@ -37,7 +37,7 @@ namespace XamarinVacancies.Database
             return _con.Table<Vacancy>().Where(v => v.VacancyName.Contains(word)).ToList();
         }
 
-        public IEnumerable<Vacancy> GetVacancies()
+        public IList<Vacancy> GetVacancies()
         {
             return _con.Table<Vacancy>().ToList();
         }
